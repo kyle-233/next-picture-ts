@@ -27,7 +27,7 @@ body {
 }
 
 body {
-  background-color: rgba(var(--body-background-rgb), 1);
+  /* background-color: rgba(var(--body-background-rgb), 1); */
 }
 
 a {
