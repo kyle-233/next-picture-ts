@@ -3,10 +3,10 @@
 import { useEffect } from "react";
 import * as THREE from "three";
 import styles from "./StarBackground.module.css";
-let camear;
-let scene;
-let material;
-let renderer;
+let camear: any;
+let scene: any;
+let material: any;
+let renderer: any;
 let mouseX = 0;
 let mouseY = 0;
 export const StarBackground = () => {
@@ -58,7 +58,7 @@ export const StarBackground = () => {
     animate();
   }, []);
 
-  const onPointerMove = (event) => {
+  const onPointerMove = (event: any) => {
     mouseX = event.clientX - window.innerWidth / 2;
     mouseY = event.clientY - window.innerHeight / 2;
   };
