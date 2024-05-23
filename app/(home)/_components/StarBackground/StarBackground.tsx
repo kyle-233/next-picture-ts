@@ -11,7 +11,6 @@ let mouseX = 0;
 let mouseY = 0;
 export const StarBackground = () => {
   useEffect(() => {
-    console.log("1");
     const init = () => {
       camear = new THREE.PerspectiveCamera();
       camear.position.z = 500;
@@ -57,6 +56,18 @@ export const StarBackground = () => {
     init();
     animate();
   }, []);
+
+  useEffect(() => {
+    const resetListener = () => {
+      const { devicePixelRatio, innerHeight, innerWidth } = window;
+      renderer.setSize(innerWidth, innerHeight);
+      renderer.setPixelRatio(devicePixelRatio);
+    }
+    window.addEventListener('resize', resetListener)
+    return () => {
+      window.removeEventListener('resize', resetListener)
+    }
+  }, [])
 
   const onPointerMove = (event: any) => {
     mouseX = event.clientX - window.innerWidth / 2;
